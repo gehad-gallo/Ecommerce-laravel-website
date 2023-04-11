@@ -15,8 +15,11 @@ class SettingsController extends Controller
 
         //free , inner , outer for shipping methods
 
-   
-        if ($type === 'inner')
+    if ($type === 'free')
+            $shippingMethod = Setting::where('key', 'free_shipping_label')->first();
+
+
+        elseif ($type === 'inner')
             $shippingMethod = Setting::where('key', 'local_label')->first();
 
         elseif ($type === 'outer')
@@ -44,13 +47,13 @@ class SettingsController extends Controller
             DB::beginTransaction();
             $shipping_method->update(['plain_value' => $request->plain_value]);
             //save translations
-            $shipping_method->value = $request->value;
+            $shipping_method->value = $request->value;  // 'text',  I changed it to be disable 
             $shipping_method->save();
 
             DB::commit();
-            return redirect()->back()->with(['success' => 'تم التحديث بنجاح']);
+            return redirect()->back()->with(['success' => trans('admin/settings/shippings.success')]);
         } catch (\Exception $ex) {
-            return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاولة فيما بعد']);
+            return redirect()->back()->with(['error' => trans('admin/settings/shippings.error')]);
             DB::rollback();
         }
 
