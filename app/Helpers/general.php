@@ -14,3 +14,4 @@ function uploadImage($folder,$image){
     $filename = $image->hashName();
     return  $filename;
  }
+

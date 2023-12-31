@@ -15,7 +15,7 @@ class SettingDatabaseSeeder extends Seeder
     public function run()
     {
         Setting::setMany([
-            'default_locale' => 'ar',
+            'default_locale' => 'en',
             'default_timezone' => 'Africa/Cairo',
             'reviews_enabled' => true,
             'auto_approve_reviews' => true,
@@ -27,10 +27,10 @@ class SettingDatabaseSeeder extends Seeder
             'outer_shipping_cost' => 0,
             'free_shipping_cost' => 0,
             'translatable' => [
-                'store_name' => 'متجر الامامي',
-                'free_shipping_label' => 'توصيل مجاني',
-                'local_label' => 'توصيل داخلي',
-                'outer_label' => 'توصيل خارجي',
+                'store_name' => 'matger elemamy',
+                'free_shipping_label' => 'free shipping',
+                'local_label' => 'inner shipping',
+                'outer_label' => 'outer shipping',
             ],
         ]);
 

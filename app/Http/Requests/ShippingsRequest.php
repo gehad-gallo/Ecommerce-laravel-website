@@ -25,7 +25,7 @@ class ShippingsRequest extends FormRequest
     {
        return [
             'id' => 'required|exists:settings',
-            'value' => 'required',
+            //'value' => 'text',
             'plain_value' => 'nullable|numeric',
         ];
     }

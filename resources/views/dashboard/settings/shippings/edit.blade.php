@@ -8,10 +8,10 @@
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="">الرئيسية </a>
+                                <li class="breadcrumb-item"><a href="">{{__('admin/settings/shippings.home')}}</a>
                                 </li>
 
-                                <li class="breadcrumb-item active">وسائل التوصيل
+                                <li class="breadcrumb-item active">{{__('admin/settings/shippings.shipping methods')}}
                                 </li>
                             </ol>
                         </div>
@@ -25,7 +25,7 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title" id="basic-layout-form"> تعديل  وسيلة توصيل </h4>
+                                    <h4 class="card-title" id="basic-layout-form">{{__('admin/settings/shippings.edit shipping method')}}</h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -53,11 +53,11 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> الاسم </label>
-                                                            <input type="text" value="{{$shippingMethod -> value  }}" id="name"
+                                                            <label for="projectinput1">{{__('admin/settings/shippings.method')}}</label>
+                                                            <input type="text" value="{{$shippingMethod -> value}}" id="value"
                                                                    class="form-control"
                                                                    placeholder="  "
-                                                                   name="value">
+                                                                   name="value" disabled >
                                                             @error("value")
                                                             <span class="text-danger">{{$message}}</span>
                                                             @enderror
@@ -66,7 +66,7 @@
 
                                                          <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="projectinput1"> قيمه التوصيل </label>
+                                                                <label for="projectinput1">{{__('admin/settings/shippings.delivery value')}}</label>
                                                                 <input type="number" value="{{$shippingMethod -> plain_value}}" id="plain_value"
                                                                        class="form-control"
                                                                        placeholder="  "
@@ -83,12 +83,9 @@
                                             </div>
 
                                             <div class="form-actions">
-                                                <button type="button" class="btn btn-warning mr-1"
-                                                        onclick="history.back();">
-                                                    <i class="ft-x"></i> تراجع
-                                                </button>
+                                                
                                                 <button type="submit" class="btn btn-primary">
-                                                    <i class="la la-check-square-o"></i> حفظ
+                                                    {{__('admin/settings/shippings.save')}}
                                                 </button>
                                             </div>
                                         </form>
